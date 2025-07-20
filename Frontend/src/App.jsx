@@ -6,6 +6,7 @@ import { ScrollTrigger, ScrollSmoother } from "gsap/all";
 import gsap from "gsap";
 import FlavorSection from "./sections/flavouSection";
 import { useGSAP } from "@gsap/react";
+import Page3 from "./sections/page3";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -21,7 +22,6 @@ export default function App() {
   return (
     <>
       <div className="w-screen relative" id="smooth-wrapper">
-        {/* Background Gradient Layer */}
         <div className="absolute inset-0 z-0 bg-[linear-gradient(135deg,#0079AC,#00B3D2)]" />
         {/* Particles js */}
         <ParticlesBackground />
@@ -34,6 +34,7 @@ export default function App() {
           <LandingPage/>
           <MissionPage />
           <FlavorSection />
+          <Page3/>
         </div>
       </div>
     </>

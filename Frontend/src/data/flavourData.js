@@ -3,51 +3,80 @@ const flavorData = [
     name: "Almond",
     url: "/images/almond.webp",
     rotation: "md:rotate-[-8deg] rotate-0",
+    elemUrl:"/images/black-elements.webp",
+    bgUrl:"/images/birthday-cake-batter-bg.webp",
+    color:"text-milk",
+    width:"w-[100%]",
+    height:"h-[95%]"
   },
   {
     name: "Cake batter",
     url: "/images/birthday-cake-batter.webp",
     rotation: "md:rotate-[8deg] rotate-0",
+    elemUrl:"/images/blue-elements.webp",
+    bgUrl:"/images/white-bg.svg",
+    color:"text-dark-brown",
+    width:"w-[100%]",
   },
   {
     name: "Dark Sea Salt",
     url: "/images/dark-chocolate-sea-salt.webp",
     rotation: "md:rotate-[-8deg] rotate-0",
+    elemUrl:"/images/brown-elements.webp",
+    bgUrl:"/images/brown-bg2.avif",
+    color:"text-milk",
+    width:"w-[100%]",
+    height:"h-[95%]"
+
   },
   {
     name: "Dark Chocolate",
     url: "/images/dark-chocolate.webp",
     rotation: "md:rotate-[8deg] rotate-0",
+    elemUrl:"/images/choco_element.png",
+    bgUrl:"/images/birthday-cake-batter-bg.webp",
+    color:"text-milk",
+    width:"w-[100%]",
+    height:"h-[95%]"
   },
   {
     name: "Milk Chocolate",
     url: "/images/milk-chocolate.webp",
     rotation: "md:rotate-[-8deg] rotate-0",
+    elemUrl:"/images/crunch-elements.webp",
+    bgUrl:"/images/white-bg.svg",
+    color:"text-dark-brown",
+    width:"w-[100%]",
   },
   {
     name: "Milk Crunch",
     url: "/images/milk-crunch.webp",
     rotation: "md:rotate-[8deg] rotate-0",
+    elemUrl:"/images/orange-elements.webp",
+    bgUrl:"/images/bg2.png",
+    color:"text-milk",
+    width:"w-[100%]",
   },
   {
     name: "Peanut Butter",
     url: "/images/peanut-butter-crunch.webp",
     rotation: "md:rotate-[8deg] rotate-0",
+    elemUrl:"/images/red-elements.webp",
+    bgUrl:"/images/blue-bg.svg",
+    color:"text-milk",
+    width:"w-[100%]",
   },
   {
     name: "Cookies Creme",
     url: "/images/Cookies_Creme.webp",
     rotation: "md:rotate-[8deg] rotate-0",
+    elemUrl:"/images/white-elements.webp",
+    bgUrl:"/images/brown-bg.svg",
+    color:"text-dark-brown",
+    width:"w-[100%]",
+    
   },
 
-];
-
-const nutrientLists = [
-  { label: "Potassium", amount: "245mg" },
-  { label: "Calcium", amount: "500mg" },
-  { label: "Vitamin A", amount: "176mcg" },
-  { label: "Vitamin D", amount: "5mcg" },
-  { label: "Iron", amount: "1mg" },
 ];
 
 const cards = [
@@ -100,4 +129,4 @@ const cards = [
   },
 ];
 
-export { flavorData, nutrientLists, cards };
+export { flavorData, cards };
