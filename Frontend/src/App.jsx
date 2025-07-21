@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import Page3 from "./sections/page3";
 import BenefitSection from "./sections/benefitSection";
 import ModelSection from "./sections/3DSection";
+import CravingSection from './sections/cravingSection';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -37,7 +38,10 @@ export default function App() {
           <MissionPage />
           <FlavorSection />
           <Page3/>
+          <div>
           <BenefitSection/>
+          <CravingSection/>
+          </div>
           <ModelSection/>
         </div>
       </div>

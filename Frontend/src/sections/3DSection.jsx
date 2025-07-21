@@ -5,7 +5,6 @@ import My3DModel from '../3d components/3DModel';
 import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 
-
 const ResponsiveCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -28,7 +27,7 @@ const ResponsiveCanvas = () => {
     });
 
   return (
-    <div className=" canvas-section relative w-full min-h-screen p-10">  
+    <div className="canvas-section relative w-full min-h-screen p-10">  
 
       {/* For Desktop & Tablet: absolute overlapping */}
       {!isMobile && (
