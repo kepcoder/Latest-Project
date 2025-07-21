@@ -1,5 +1,5 @@
 import { useGSAP } from '@gsap/react';
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import gsap from 'gsap';
 
 
@@ -45,7 +45,7 @@ function Page3() {
   );
 
   return (
-    <div className='w-full h-[90vh] flex-col lg:flex-row flex p-6 gap-4'>
+    <div className='w-full lg:h-[90vh] flex-col lg:flex-row flex p-6 gap-4'>
        <div className="relative w-full lg:w-[50%]  h-full rounded-2xl bg-milk p-10 flex flex-col items-start justify-between">
           <div className="uppertext z-2">
               <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-[Kanit-Bold]'>IN THE COCOA INDUSTRY</h1>
@@ -57,12 +57,11 @@ function Page3() {
           </div>
           <div className="gooey sm:w-50 sm:h-50 md:w-60 md:h-60 lg:w-50 lg:h-50 xl:w-80 xl:h-80"></div>
        </div>
-       <div className="w-full lg:w-[50%] h-full bg-transparent"
+       <div className="w-full lg:w-[50%] h-full bg-red-400"
          onMouseEnter={handleMouseEnter}
          onMouseLeave={handleMouseLeave} 
          onMouseMove={handleMouseMove}
-         ref={containerRef}    
-       >
+         ref={containerRef}>
           <div className="relative w-full h-full bg-cover">
             {hovered && (
                <div
@@ -89,7 +88,7 @@ function Page3() {
             <video 
               ref={videoRef}
               src="/videos/Learn-more-video.mp4"
-              className='w-full h-full'  
+              className='w-full h-full object-cover'  
               muted loop
             ></video>
           </div>

@@ -93,12 +93,12 @@ body {
   font-family: "Antonio", sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
 }
 
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+  display: none;
 }
 
 @layer utilities {
@@ -117,8 +117,11 @@ body::-webkit-scrollbar {
   .gooey{
     @apply absolute bottom-5 filter blur-xl right-5 rounded-full opacity-80;
      background: linear-gradient(to top right, #ff2d03, #ff671b);
-     animation: gooey 4s ease-out infinite alternate
-     
+     animation: gooey 4s ease-out infinite alternate  
+  }
+  .floating{
+    @apply  w-25 h-12 z-20;
+     animation: floating-choco 4s ease-out infinite alternate; 
   }
   .Learn-More{
     @apply text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl
@@ -192,7 +195,7 @@ body::-webkit-scrollbar {
   }
 
   .flavor-section {
-    @apply min-h-dvh bg-milk w-full;
+    @apply  min-h-dvh bg-milk w-full;
 
     .flavor-text-scroll {
       @apply rotate-[-3deg] md:translate-y-5 border-[.5vw] border-milk absolute z-10;
@@ -228,7 +231,7 @@ body::-webkit-scrollbar {
   }
 
   .benefit-section {
-    @apply min-h-dvh bg-[#222123] overflow-hidden relative;
+    @apply min-h-dvh bg-[#222123] overflow-hidden relative p-5;
 
     p {
       @apply text-milk font-paragraph text-center text-lg;
@@ -326,5 +329,16 @@ body::-webkit-scrollbar {
   }
   100% {
     transform: translate(-10%, 10%) skew(12deg);
+  }
+}
+@keyframes floating-choco{
+ 0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
