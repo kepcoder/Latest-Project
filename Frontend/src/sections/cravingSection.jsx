@@ -5,33 +5,46 @@ import gsap from "gsap";
 
 const CravingSection = () => {
   const vdRef = useRef([]);
+  let startValue = window.innerWidth < 768 ? "10% top" : "20% top";
 
   useGSAP(() => {
-    gsap.set(".Craving-section", {
+   const mm = gsap.matchMedia();
+
+  mm.add("(min-width: 768px)", () => {
+    // For desktops and tablets
+    gsap.set(".testimonials-section", {
       marginTop: "-140vh",
     });
+  });
+
+  mm.add("(max-width: 767px)", () => {
+    // For mobile devices
+    gsap.set(".testimonials-section", {
+      marginTop: "-10vh", // You can adjust this to fit
+    });
+  });
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".Craving-section",
+        trigger: ".testimonials-section",
         start: "top bottom",
         end: "200% top",
         scrub: true,
       },
     });
 
-    tl.to(".Craving-section .first-title", {
+    tl.to(".testimonials-section .first-title", {
       xPercent: 70,
     })
       .to(
-        ".Craving-section .sec-title",
+        ".testimonials-section .sec-title",
         {
           xPercent: 25,
         },
         "<"
       )
       .to(
-        ".Craving-section .third-title",
+        ".testimonials-section .third-title",
         {
           xPercent: -50,
         },
@@ -40,8 +53,8 @@ const CravingSection = () => {
 
     const pinTl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".Craving-section",
-        start: "10% top",
+        trigger: ".testimonials-section",
+        start: startValue,
         end: "200% top",
         scrub: 1.5,
         pin: true,
@@ -66,11 +79,11 @@ const CravingSection = () => {
   };
 
   return (
-    <section className="Craving-section">
+    <section className="testimonials-section">
       <div className="absolute size-full flex flex-col items-center pt-[5vw]">
-        <h1 className="text-black first-title">A Flavor</h1>
-        <h1 className="text-light-brown sec-title">For Every</h1>
-        <h1 className="text-black third-title">Craving</h1>
+        <h1 className="text-black first-title">A Flavour</h1>
+        <h1 className="text-pink-400 sec-title">For Every</h1>
+        <h1 className="text-light-brown third-title">Craving</h1>
       </div>
 
       <div className="pin-box">

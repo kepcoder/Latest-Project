@@ -38,12 +38,12 @@ export default function App() {
           <MissionPage />
           <FlavorSection />
           <Page3/>
-          <div>
           <BenefitSection/>
           <CravingSection/>
-          </div>
           <ModelSection/>
         </div>
+
+
       </div>
     </>
   );
