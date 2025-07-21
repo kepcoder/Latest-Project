@@ -20,7 +20,7 @@ const CravingSection = () => {
   mm.add("(max-width: 767px)", () => {
     // For mobile devices
     gsap.set(".testimonials-section", {
-      marginTop: "-10vh", // You can adjust this to fit
+      marginTop: "-0vh",
     });
   });
 
