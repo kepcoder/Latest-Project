@@ -81,7 +81,7 @@ const CravingSection = () => {
   return (
     <section className="testimonials-section">
       <div className="absolute size-full flex flex-col items-center pt-[5vw]">
-        <h1 className="text-black first-title">A Flavour</h1>
+        <h1 className="text-black first-title">A Flavor</h1>
         <h1 className="text-pink-400 sec-title">For Every</h1>
         <h1 className="text-light-brown third-title">Craving</h1>
       </div>
