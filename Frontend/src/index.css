@@ -269,7 +269,16 @@ body::-webkit-scrollbar {
       }
     }
   }
-  .testimonials-section {
+
+
+  .craving-mobile-section{
+    @apply flex flex-col items-center px-4 gap-4 py-12;
+
+     h1{
+      @apply uppercase text-[20.5vw] leading-[105%] tracking-[-.4vw] ml-[2vw] font-bold;
+     }
+  }
+  .craving-section {
     @apply bg-milk relative w-full h-[150dvh];
 
     .pin-box {
