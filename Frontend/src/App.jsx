@@ -11,7 +11,6 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [progressDone, setProgressDone] = useState(false);
 
-
   useEffect(() => {
     if (progressDone) {
       setTimeout(() => {

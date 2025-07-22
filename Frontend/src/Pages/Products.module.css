@@ -1,0 +1,18 @@
+.cardAnimation {
+  animation: slideRight 0.8s ease-out forwards;
+  opacity: 0;
+  filter: blur(10px);
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
