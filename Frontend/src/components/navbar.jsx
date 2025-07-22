@@ -10,6 +10,11 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleLogoClick = () => {
+    window.location.href = "/";
+    window.location.reload();
+  };
+
   // Internal navigation links
   const navItems = [
     { name: "Shop", path: "/products" },
@@ -103,12 +108,13 @@ const Navbar = () => {
           <BsHandbag />
         </div>
 
-        <Link
-          to="/"
-          className="logo w-[160px] mx-auto xl:mx-0 sm:w-[140px] xs:w-[120px] max-[400px]:w-[100px]"
+        {/* Replace Link with div for logo */}
+        <div
+          onClick={handleLogoClick}
+          className="logo w-[160px] mx-auto xl:mx-0 sm:w-[140px] xs:w-[120px] max-[400px]:w-[100px] cursor-pointer"
         >
           <img src="/images/logo.avif" alt="logo" className="mx-auto" />
-        </Link>
+        </div>
 
         <div className="hidden xl:flex gap-8 font-[Kanit-BlackItalic] text-xl text-black tracking-wide">
           {navItems.map((item, idx) => renderLink(item, idx))}

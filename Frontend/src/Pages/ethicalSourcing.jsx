@@ -30,7 +30,7 @@ const processData = [
     step: "Package",
     description:
       "Environmentally conscious packaging that maintains product freshness.",
-    image: "/videos/packaging.mp4",
+    video: "/videos/packaging.mp4",
   },
 ];
 
@@ -57,59 +57,66 @@ const EthicalSourcing = () => {
   const cardsRef = useRef(null); // Add new ref for cards
 
   useEffect(() => {
-    // Timeline animation for process
+    // Timeline animation for process with adjusted triggers
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: timelineRef.current,
-        start: "top center",
-        end: "bottom center",
-        scrub: 1,
+        start: "top 80%", // Changed from center to 80%
+        end: "bottom 60%", // Changed to 60%
+        scrub: 0.5, // Reduced scrub time for smoother animation
       },
     });
 
     timeline
       .from(".process-item", {
         opacity: 0,
-        y: 50,
-        stagger: 0.2,
+        y: 30, // Reduced y distance
+        stagger: 0.1, // Faster stagger
       })
       .from(
         ".process-line",
         {
           scaleY: 0,
           transformOrigin: "top",
-          duration: 1,
+          duration: 0.5, // Reduced duration
         },
         "<"
       );
 
-    // New animation for card divs
+    // Improved cards animation
     const cards = gsap.utils.toArray(".card-container");
     cards.forEach((card, i) => {
-      gsap.set(card, { opacity: 0, y: 100 }); // Set initial state
+      gsap.set(card, { opacity: 0, y: 50 }); // Reduced initial y offset
 
       ScrollTrigger.create({
         trigger: card,
-        start: "top 80%",
-        end: "top 50%",
-        scrub: 1,
+        start: "top 90%", // Earlier trigger point
+        end: "top 60%", // Earlier end point
+        scrub: 0.5, // Smoother scrub
+        toggleActions: "play none none reverse",
         onEnter: () => {
           gsap.to(card, {
             opacity: 1,
             y: 0,
-            duration: 1,
-            ease: "power2.out",
+            duration: 0.5, // Faster animation
+            ease: "power1.out", // Smoother easing
+            delay: i * 0.1, // Shorter delay between cards
           });
         },
         onLeaveBack: () => {
           gsap.to(card, {
             opacity: 0,
-            y: 100,
-            duration: 1,
+            y: 50,
+            duration: 0.3,
           });
         },
       });
     });
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
