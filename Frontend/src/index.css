@@ -62,7 +62,7 @@
   src: url("/fonts/Sohne-BoldItalic.woff2");
 }
 @font-face {
-  font-family: "Sohne-BoldItalic";
+  font-family: "Sohne-regular";
   src: url("/fonts/Sohne-Regular.woff2");
 }
 
@@ -126,6 +126,18 @@ body::-webkit-scrollbar {
   .Learn-More{
     @apply text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl
   }
+  .store-section .store-text button{
+    animation: store-button 4s ease-out infinite alternate  
+  }
+  .store-img{
+     animation: store-img 4s ease-out infinite alternate; 
+  }
+  .products{
+     animation: product-animate 4s ease-out infinite alternate; 
+  }
+  .loading-logo{
+    animation: loading-logo 3s ease-out infinite alternate;
+  }
 } 
 
 @layer components {
@@ -166,7 +178,11 @@ body::-webkit-scrollbar {
   }
 
   .message-content {
-    @apply bg-[#7f3b2d] text-milk min-h-dvh overflow-hidden flex justify-center items-center relative z-20;
+    @apply text-milk min-h-dvh overflow-hidden flex justify-center items-center relative z-20;
+           background-image: url('/images/mission-bg.jpg');
+           background-size: cover; 
+           background-position: center;
+           background-repeat: no-repeat;
 
     .msg-wrapper {
       @apply 2xl:text-[8.5rem] md:text-8xl text-5xl font-bold uppercase leading-[9vw] tracking-[-.35vw] flex flex-col justify-center items-center md:gap-24 gap-14;
@@ -294,6 +310,20 @@ body::-webkit-scrollbar {
     }
   }
 
+ .store-section{
+   @apply relative w-full h-screen;
+   .store-text h1{
+    @apply uppercase leading-[105%] tracking-wide ml-[2vw] font-bold;
+   }
+
+ }
+
+  .store-img img{
+      @apply w-[20vw] h-auto object-contain border-4 border-light-brown rounded-xl shadow-[0_35px_60px_rgba(0,0,0,0.4)] ;
+    
+  }
+
+
   .footer-section {
     @apply 2xl:min-h-dvh overflow-hidden relative bg-[#222123];
 
@@ -350,3 +380,50 @@ body::-webkit-scrollbar {
     transform: translateY(0px);
   }
 }
+
+@keyframes store-button{
+ 0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes store-img{
+ 0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes product-animate{
+ 0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes loading-logo{
+ 0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+

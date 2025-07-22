@@ -1,50 +1,50 @@
-import ParticlesBackground from "./bgParticles/backgroundParticles";
-import Navbar from "./components/navbar";
-import LandingPage from "./sections/landingPage";
-import MissionPage from "./sections/MissionPage";
-import { ScrollTrigger, ScrollSmoother } from "gsap/all";
+import { useEffect, useState } from "react";
+import AppRoute from "./Routes/routes";
+import Navbar from './components/navbar';
+import LoadingPage from "./components/loading";
 import gsap from "gsap";
-import FlavorSection from "./sections/flavouSection";
-import { useGSAP } from "@gsap/react";
-import Page3 from "./sections/page3";
-import BenefitSection from "./sections/benefitSection";
-import ModelSection from "./sections/3DSection";
-import CravingSection from './sections/CravingSection';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger);
 
-export default function App() {
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [progressDone, setProgressDone] = useState(false);
 
-  useGSAP(() => {
-    ScrollSmoother.create({
-      smooth: 3,
-      effects: true,
-    });
-  });
+
+  useEffect(() => {
+    if (progressDone) {
+      setTimeout(() => {
+        setIsLoading(false);
+
+   
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 100);
+      }, 500);
+    }
+  }, [progressDone]);
+
+
+ if (isLoading) {
+  return <LoadingPage onComplete={() => {
+    setIsLoading(false);
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+  }} />;
+}
 
   return (
-    <>
-      <div className="w-screen relative" id="smooth-wrapper">
-        <div className="absolute inset-0 z-0 bg-[linear-gradient(135deg,#0079AC,#00B3D2)]" />
-        {/* Particles js */}
-        <ParticlesBackground />
-
-        {/* My content */}
-        <div className="w-full fixed top-0 left-0 z-100">
-          <Navbar />
-        </div>
-        <div className="z-10 relative" id="smooth-content">
-          <LandingPage/>
-          <MissionPage />
-          <FlavorSection />
-          <Page3/>
-          <BenefitSection/>
-          <CravingSection/>
-          <ModelSection/>
-        </div>
-
-
+    <div>
+      <div className="w-full fixed top-0 left-0 z-100">
+        <Navbar />
       </div>
-    </>
+      <AppRoute />
+    </div>
   );
-}
+};
+
+export default App;
+
+

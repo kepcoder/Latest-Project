@@ -5,7 +5,7 @@ import My3DModel from '../3d components/3DModel';
 import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 
-const ResponsiveCanvas = () => {
+const ModelSection = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -127,7 +127,7 @@ const ResponsiveCanvas = () => {
           src={
             isMobile
               ? '/images/thumbnail-mrbeast-mobile.webp'
-              : '/images/thumbnail-mrbeast.webp'
+              : '/images/thumbnail-mrbeast.jpg'
           }
           alt="Thumbnail"
           className="w-full h-auto object-cover max-h-[90vh]"
@@ -137,4 +137,4 @@ const ResponsiveCanvas = () => {
   );
 };
 
-export default ResponsiveCanvas;
+export default ModelSection;

@@ -129,4 +129,109 @@ const CravingCards = [
   },
 ];
 
-export { flavorData, CravingCards };
+const products = {
+  chocolates: [
+    {
+      id: 1,
+      title: "Birthday Cake Batter",
+      image: "/images/product1.png",
+      price: "$4.99"
+    },
+    {
+      id: 2,
+      title: "Milk Chocolate",
+      image: "/images/product2.png",
+      price: "$5.49"
+    },
+        {
+      id: 2,
+      title: "Peanut Butter",
+      image: "/images/product3.png",
+      price: "$5.49"
+    },
+        {
+      id: 2,
+      title: "Milk Crunch",
+      image: "/images/product4.png",
+      price: "$5.49"
+    },
+        {
+      id: 2,
+      title: "Peanut Butter Crunch",
+      image: "/images/product5.png",
+      price: "$5.49"
+    },
+        {
+      id: 2,
+      title: "Almond",
+      image: "/images/product6.png",
+      price: "$5.49"
+    },
+        {
+      id: 2,
+      title: "Dark Chocolate",
+      image: "/images/product7.png",
+      price: "$5.49"
+    },
+        {
+      id: 2,
+      title: "Dark Chocolate Sea Salt",
+      image: "/images/product8.png",
+      price: "$5.49"
+    },
+        {
+      id: 2,
+      title: "Cookies and Creme",
+      image: "/images/product9.png",
+      price: "$5.49"
+    },
+    // ...total 8 chocolates
+  ],
+  cups: [
+    {
+      id: 9,
+      title: "Peanut Butter Cups",
+      image: "https://example.com/cup1.jpg",
+      price: "$3.99"
+    },
+    {
+      id: 10,
+      title: "Hazelnut Cups",
+      image: "https://example.com/cup2.jpg",
+      price: "$4.29"
+    },
+  ],
+  bundles: [
+    {
+      id: 11,
+      title: "Family Bundle",
+      image: "https://example.com/bundle1.jpg",
+      price: "$19.99"
+    },
+    {
+      id: 12,
+      title: "Mega Feast Pack",
+      image: "https://example.com/bundle2.jpg",
+      price: "$29.99"
+    },
+  ],
+  limited: [
+    {
+      id: 13,
+      title: "Limited Edition Gold Bar",
+      image: "https://example.com/limited1.jpg",
+      price: "$9.99"
+    },
+    {
+      id: 14,
+      title: "Holiday Special Dark Mint",
+      image: "https://example.com/limited2.jpg",
+      price: "$7.49"
+    },
+  ]
+};
+
+export default products;
+
+
+export { flavorData, CravingCards, products };

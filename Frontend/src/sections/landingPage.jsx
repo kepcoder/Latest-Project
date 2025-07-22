@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 // import { useMediaQuery } from "react-responsive";
 
-const HeroSection = () => {
+const LandingPage = () => {
   // const isMobile = useMediaQuery({
   //   query: "(max-width: 768px)",
   // });
@@ -85,7 +85,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
-  );
+  )
 };
 
-export default HeroSection;
+export default LandingPage;
