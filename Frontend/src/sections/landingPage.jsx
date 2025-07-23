@@ -62,13 +62,16 @@ const LandingPage = () => {
 
   return (
     <section className="bg-transparent">
-      <div className="landing-container">
-        <img
+      <div className="landing-container ">
+        <video src="/videos/landing-video.mp4"
+               className="video-animate absolute bottom-0 left-0 w-full h-full object-cover object-bottom z-0" autoPlay muted
+        ></video>
+        {/* <img
           src="/images/bgimage.jpg"
           className="absolute bottom-0 left-0 w-full h-full object-cover object-bottom z-0"
-        />
+        /> */}
 
-        <div className="landing-content opacity-0">
+        <div className="landing-content opacity-0 text-center max-[600px]:pt-80">
           <div className="overflow-hidden">
             <h1 className="landing-title max-[450px]:text-4xl max-[350px]:text-3xl">Support cocoa farmers</h1>
           </div>

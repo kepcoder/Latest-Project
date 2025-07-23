@@ -11,8 +11,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLogoClick = () => {
-    window.location.href = "/";
-    window.location.reload();
+    // Use react-router-dom navigation instead of window.location.href
+    // This will be replaced by Link below
   };
 
   // Internal navigation links
@@ -27,10 +27,8 @@ const Navbar = () => {
   ];
 
   const mobileItems = [
-    { name: "Chocolate", path: "/chocolate" },
-    { name: "Cups", path: "/cups" },
-    { name: "Bundles", path: "/bundles" },
-    { name: "Limited Time", path: "/limited-time" },
+    { name: "Bundles", path: "/products" },
+    { name: "Limited Time", path: "/products" },
   ];
 
   const waveVariants = {
@@ -109,12 +107,13 @@ const Navbar = () => {
         </div>
 
         {/* Replace Link with div for logo */}
-        <div
-          onClick={handleLogoClick}
+        <Link
+          to="/"
           className="logo w-[160px] mx-auto xl:mx-0 sm:w-[140px] xs:w-[120px] max-[400px]:w-[100px] cursor-pointer"
+          onClick={e => { e.preventDefault(); window.location.replace('/'); }}
         >
           <img src="/images/logo.avif" alt="logo" className="mx-auto" />
-        </div>
+        </Link>
 
         <div className="hidden xl:flex gap-8 font-[Kanit-BlackItalic] text-xl text-black tracking-wide">
           {navItems.map((item, idx) => renderLink(item, idx))}
@@ -129,7 +128,7 @@ const Navbar = () => {
               className="w-full h-full object-cover cursor-pointer"
             />
           </div>
-          <CiFaceSmile className="cursor-pointer" />
+          <Link to='/login'><CiFaceSmile className="cursor-pointer" /></Link>
           <IoLocationOutline className="cursor-pointer" />
           <BsHandbag className="cursor-pointer" />
         </div>

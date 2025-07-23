@@ -35,7 +35,7 @@
 }
 @font-face {
   font-family: "nukku1";
-  src: url("Frontend/public/fonts/nKKU-Go6G5tXcr4uPhWnVaE.woff2");
+  src: url("/fonts/nKKU-Go6G5tXcr4uPhWnVaE.woff2");
 }
 @font-face {
   font-family: "nukku2";
@@ -425,5 +425,6 @@ body::-webkit-scrollbar {
     transform: translateY(0px);
   }
 }
+
 
 

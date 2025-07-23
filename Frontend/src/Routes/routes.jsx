@@ -3,7 +3,9 @@ import Home from './../components/Home';
 import Products from '../Pages/Products';
 import Worldwide from './../Pages/worldwide';
 import EthicalSourcing from './../Pages/ethicalSourcing';
-
+import Login from './../Pages/Login';
+import Register from '../Pages/Register';
+import Influencer from "../Pages/influencer";
 
 const AppRoute = () => {
    return (
@@ -12,6 +14,9 @@ const AppRoute = () => {
       <Route path="/products" element={<Products/>} />
       <Route path="/worldwide" element={<Worldwide/>} />
       <Route path="/ethicalsourcing" element={<EthicalSourcing/>} />
+      <Route path="/login" element={<Login/>} />
+      <Route path="/register" element={<Register/>} />
+      <Route path="/influencer" element={<Influencer/>} />
       {/* Add more routes here */}
     </Routes>
   );
