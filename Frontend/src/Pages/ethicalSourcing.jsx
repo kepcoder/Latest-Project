@@ -61,9 +61,10 @@ const EthicalSourcing = () => {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: timelineRef.current,
-        start: "top 80%", // Changed from center to 80%
-        end: "bottom 60%", // Changed to 60%
+        start: "top 60%", // Slightly later for better animation
+        end: "bottom 25%", // Slightly later
         scrub: 0.5, // Reduced scrub time for smoother animation
+        markers:true
       },
     });
 
@@ -71,7 +72,7 @@ const EthicalSourcing = () => {
       .from(".process-item", {
         opacity: 0,
         y: 30, // Reduced y distance
-        stagger: 0.1, // Faster stagger
+        stagger: 0.001, // Faster stagger
       })
       .from(
         ".process-line",
@@ -90,8 +91,8 @@ const EthicalSourcing = () => {
 
       ScrollTrigger.create({
         trigger: card,
-        start: "top 90%", // Earlier trigger point
-        end: "top 60%", // Earlier end point
+        start: "top 95%", // Reveal earlier
+        end: "top 80%", // Reveal earlier
         scrub: 0.5, // Smoother scrub
         toggleActions: "play none none reverse",
         onEnter: () => {
@@ -113,7 +114,6 @@ const EthicalSourcing = () => {
       });
     });
 
-    // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -124,7 +124,9 @@ const EthicalSourcing = () => {
       <BackgroundParticles />
       <div className="relative z-10">
         {/* Hero Section */}
-        <div className="h-[70vh] flex items-center justify-center text-center px-4">
+        <div className="relative w-full h-screen pt-15 flex items-center justify-center text-center px-4">
+          <img src="/images/commitment-bg.jpg"
+               className="absolute top-0 left-0 w-full h-full" alt="" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -140,7 +142,7 @@ const EthicalSourcing = () => {
         </div>
 
         {/* Mission Statement */}
-        <div className="py-10 px-4">
+        <div className="px-4">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -209,7 +211,6 @@ const EthicalSourcing = () => {
                     playsInline
                   >
                     <source src={item.video} type="video/mp4" />
-                    Your browser does not support the video tag.
                   </video>
                 </div>
               </div>

@@ -173,8 +173,8 @@ useGSAP(() => {
                 ref={(el) => (vdRef.current[index] = el)}
                 src={card.src}
                 playsInline
+                mute
                 loop
-                autoPlay
                 className="w-full h-auto object-cover"
               />
             </div>

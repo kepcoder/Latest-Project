@@ -135,98 +135,139 @@ const products = {
       id: 1,
       title: "Birthday Cake Batter",
       image: "/images/product1.png",
-      price: "$4.99"
+      price: "$34.99"
     },
     {
       id: 2,
       title: "Milk Chocolate",
       image: "/images/product2.png",
-      price: "$5.49"
+      price: "$34.99"
     },
         {
-      id: 2,
+      id: 3,
       title: "Peanut Butter",
       image: "/images/product3.png",
-      price: "$5.49"
+      price: "$34.99"
     },
         {
-      id: 2,
+      id: 4,
       title: "Milk Crunch",
       image: "/images/product4.png",
-      price: "$5.49"
+      price: "$34.99"
     },
         {
-      id: 2,
+      id: 5,
       title: "Peanut Butter Crunch",
       image: "/images/product5.png",
-      price: "$5.49"
+      price: "$34.99"
     },
         {
-      id: 2,
+      id: 6,
       title: "Almond",
       image: "/images/product6.png",
-      price: "$5.49"
+      price: "$34.99"
     },
         {
-      id: 2,
+      id: 7,
       title: "Dark Chocolate",
       image: "/images/product7.png",
-      price: "$5.49"
+      price: "$34.99"
     },
         {
-      id: 2,
+      id: 8,
       title: "Dark Chocolate Sea Salt",
       image: "/images/product8.png",
-      price: "$5.49"
+      price: "$34.99"
     },
         {
-      id: 2,
+      id: 9,
       title: "Cookies and Creme",
       image: "/images/product9.png",
-      price: "$5.49"
+      price: "$34.99"
     },
-    // ...total 8 chocolates
   ],
   cups: [
     {
-      id: 9,
+      id: 10,
       title: "Peanut Butter Cups",
-      image: "https://example.com/cup1.jpg",
-      price: "$3.99"
+      image: "/images/cup1.png",
+      price: "$2.49"
     },
     {
-      id: 10,
+      id: 11,
       title: "Hazelnut Cups",
-      image: "https://example.com/cup2.jpg",
-      price: "$4.29"
+      image: "/images/cup2.png",
+      price: "$3.12"
     },
   ],
   bundles: [
     {
-      id: 11,
-      title: "Family Bundle",
-      image: "https://example.com/bundle1.jpg",
-      price: "$19.99"
+      id: 12,
+      title: "Sampler Pack",
+      image: "/images/bundle1.png",
+      price: "$24.99"
     },
     {
-      id: 12,
-      title: "Mega Feast Pack",
-      image: "https://example.com/bundle2.jpg",
-      price: "$29.99"
+      id: 13,
+      title: "Milk Chocolate Pack",
+      image: "/images/bundle2.png",
+      price: "$20.99"
+    },
+    {
+      id: 14,
+      title: "Peanut Butter Pack",
+      image: "/images/bundle3.png",
+      price: "$20.99"
+    },
+    {
+      id: 15,
+      title: "Milk Crunch Pack",
+      image: "/images/bundle4.png",
+      price: "$20.99"
+    },
+    {
+      id: 16,
+      title: "Value Pack",
+      image: "/images/bundle5.png",
+      price: "$24.99"
+    },
+    {
+      id: 17,
+      title: "Snack Size Variety Pack",
+      image: "/images/bundle6.png",
+      price: "$10.59"
     },
   ],
   limited: [
     {
-      id: 13,
-      title: "Limited Edition Gold Bar",
-      image: "https://example.com/limited1.jpg",
-      price: "$9.99"
+      id: 18,
+      title: "Birthday Cake Batter",
+      image: "/images/limited1.png",
+      price: "$34.99"
     },
     {
-      id: 14,
-      title: "Holiday Special Dark Mint",
-      image: "https://example.com/limited2.jpg",
-      price: "$7.49"
+      id: 19,
+      title: "HeadPhone Mrbeast x Jlab",
+      image: "/images/limited2.png",
+      price: "$29.88"
+    },
+    {
+      id: 20,
+      title: "Headphone Stand Beast Tower",
+      image: "/images/limited3.png",
+      price: "$24.92"
+    },
+    {
+      id: 21,
+      title: "MrBeast BriefCase Collector's Edition",
+      image: "/images/limited4.png",
+      price: "$49.97"
+    },
+    {
+      id: 22,
+      title: "Beast Game Box",
+      image: "/images/limited5.png",
+      price: "$14.99"
     },
   ]
 };
