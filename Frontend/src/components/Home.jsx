@@ -10,6 +10,7 @@ import BenefitSection from './../sections/benefitSection';
 import CravingSection from './../sections/CravingSection';
 import ModelSection from './../sections/3DSection';
 import StoreSection from './../sections/StoreSection';
+import FooterSection from "../sections/Footer";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -39,6 +40,7 @@ export default function Home() {
           <CravingSection/>
           <ModelSection/>
           <StoreSection/>
+          <FooterSection/>
         </div>
       </div>
     </>

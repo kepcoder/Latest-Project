@@ -10,18 +10,9 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleLogoClick = () => {
-    // Use react-router-dom navigation instead of window.location.href
-    // This will be replaced by Link below
-  };
-
-  // Internal navigation links
   const navItems = [
     { name: "Shop", path: "/products" },
-    {
-      name: "Ethical Sourcing",
-      path: "/ethicalsourcing",
-    },
+    { name: "Ethical Sourcing", path: "/ethicalsourcing", reload: true },
     { name: "Available Worldwide", path: "/worldwide" },
     { name: "Influencer", path: "/influencer" },
   ];
@@ -59,39 +50,39 @@ const Navbar = () => {
   const renderLink = (item, idx, onClickClose) => {
     const classes = "relative group";
 
-    if (item.external) {
-      return (
-        <motion.a
-          key={idx}
-          href={item.path}
-          target="_blank"
-          rel="noopener noreferrer"
-          custom={idx}
-          variants={waveVariants}
-          initial="hidden"
-          animate="visible"
-          className={classes}
-        >
-          {item.name}
-          <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-black group-hover:w-full transition-all duration-500" />
-        </motion.a>
-      );
-    } else {
-      return (
-        <motion.div
-          key={idx}
-          custom={idx}
-          variants={waveVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <Link to={item.path} onClick={onClickClose} className={classes}>
+    return (
+      <motion.div
+        key={idx}
+        custom={idx}
+        variants={waveVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {item.reload ? (
+          <a
+            href={item.path}
+            onClick={(e) => {
+              e.preventDefault();
+              if (onClickClose) onClickClose();
+              window.location.href = item.path;
+            }}
+            className={classes}
+          >
+            {item.name}
+            <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-black group-hover:w-full transition-all duration-500" />
+          </a>
+        ) : (
+          <Link
+            to={item.path}
+            onClick={onClickClose}
+            className={classes}
+          >
             {item.name}
             <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-black group-hover:w-full transition-all duration-500" />
           </Link>
-        </motion.div>
-      );
-    }
+        )}
+      </motion.div>
+    );
   };
 
   return (
@@ -106,11 +97,13 @@ const Navbar = () => {
           <BsHandbag />
         </div>
 
-        {/* Replace Link with div for logo */}
         <Link
           to="/"
           className="logo w-[160px] mx-auto xl:mx-0 sm:w-[140px] xs:w-[120px] max-[400px]:w-[100px] cursor-pointer"
-          onClick={e => { e.preventDefault(); window.location.replace('/'); }}
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.replace("/");
+          }}
         >
           <img src="/images/logo.avif" alt="logo" className="mx-auto" />
         </Link>
@@ -120,17 +113,19 @@ const Navbar = () => {
         </div>
 
         <div className="hidden xl:flex gap-4 text-3xl items-center">
-          <HiOutlineQuestionMarkCircle className="cursor-pointer" />
+          <HiOutlineQuestionMarkCircle className="cursor-not-allowed" />
           <div className="w-9 h-9 rounded-full border-2 border-black overflow-hidden">
             <img
               src="https://static.vecteezy.com/system/resources/previews/011/571/519/original/circle-flag-of-india-free-png.png"
               alt="India"
-              className="w-full h-full object-cover cursor-pointer"
+              className="w-full h-full object-cover cursor-not-allowed"
             />
           </div>
-          <Link to='/login'><CiFaceSmile className="cursor-pointer" /></Link>
-          <IoLocationOutline className="cursor-pointer" />
-          <BsHandbag className="cursor-pointer" />
+          <Link to="/login">
+            <CiFaceSmile className="cursor-pointer" />
+          </Link>
+          <a href="https://feastables.com/pages/find-a-store"><IoLocationOutline className="cursor-pointer" /></a>
+          <BsHandbag className="cursor-not-allowed" />
         </div>
 
         <div
@@ -173,7 +168,7 @@ const Navbar = () => {
 
             <div className="mt-auto pt-10 border-t-2 border-black flex flex-col gap-4 text-3xl">
               <div className="flex gap-4 justify-center">
-                <HiOutlineQuestionMarkCircle />
+                <HiOutlineQuestionMarkCircle/>
                 <CiFaceSmile />
               </div>
               <div className="w-10 h-10 rounded-full border-2 border-black mx-auto overflow-hidden">

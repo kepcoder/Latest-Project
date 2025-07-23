@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import { useRef, useState } from 'react';
 import gsap from 'gsap';
+import { Link } from 'react-router-dom';
 
 
 function Page3() {
@@ -49,9 +50,9 @@ function Page3() {
        <div className="relative w-full lg:w-[50%]  h-full rounded-2xl bg-milk p-10 flex flex-col items-start justify-between">
           <div className="uppertext z-2">
               <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-[Kanit-Bold]'>IN THE COCOA INDUSTRY</h1>
-              <h3 className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-[Kanit-Medium]'>Learn what we are doing to move kids out of cocoa fields and into classrooms.</h3>
+             <h3 className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-[Kanit-Medium]'>Learn what we are doing to move kids out of cocoa fields and into classrooms.</h3>
           </div>
-          <div className='Learn-More bg-[#FF2F9F] z-2 text-milk border-3 border-milk font-[nukku3] p-3 uppercase cursor-pointer rounded-lg hover:border-b-8 hover:border-white transition-all'>Learn More About Our Mission</div>
+          <Link to="/ethicalsourcing" ><div className='Learn-More bg-[#FF2F9F] z-2 text-milk border-3 border-milk font-[nukku3] p-3 uppercase cursor-pointer rounded-lg hover:border-b-8 hover:border-white transition-all'>Learn More About Our Mission</div></Link>
           <div className="lowertxt z-2">
              <p className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-[Kanit-Medium] mt-4 max-w-[90%] leading-relaxed'>MrBeast Announces Feastables Strategy to Eradicate Child Labor in the Cocoa Industry in West Africa</p>
           </div>

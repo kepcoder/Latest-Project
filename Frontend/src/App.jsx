@@ -39,7 +39,7 @@ const App = () => {
       <div className="w-full fixed top-0 left-0 z-100">
         <Navbar />
       </div>
-      <AppRoute />
+        <AppRoute />
     </div>
   );
 };

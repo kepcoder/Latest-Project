@@ -129,9 +129,6 @@ body::-webkit-scrollbar {
   .store-section .store-text button{
     animation: store-button 4s ease-out infinite alternate  
   }
-  .store-img{
-     animation: store-img 4s ease-out infinite alternate; 
-  }
   .products{
      animation: product-animate 4s ease-out infinite alternate; 
   }
@@ -319,13 +316,13 @@ body::-webkit-scrollbar {
  }
 
   .store-img img{
-      @apply w-[20vw] h-auto object-contain border-4 border-light-brown rounded-xl shadow-[0_35px_60px_rgba(0,0,0,0.4)] ;
+      @apply w-[20vw] h-auto object-contain border-4 border-light-brown rounded-xl shadow-[0_40px_60px_rgba(0,0,0,0.3)] ;
     
   }
 
 
   .footer-section {
-    @apply 2xl:min-h-dvh overflow-hidden relative bg-[#222123];
+    @apply 2xl:min-h-dvh min-h-dvh overflow-hidden relative bg-[#222123];
 
     .social-btn {
       @apply border border-[#faeade33] md:size-[5vw] size-14 md:p-0 p-3 flex justify-center items-center rounded-full hover:bg-[#ffffff1a] transition-colors cursor-pointer;
@@ -392,17 +389,7 @@ body::-webkit-scrollbar {
     transform: translateY(0px);
   }
 }
-@keyframes store-img{
- 0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
+
 @keyframes product-animate{
  0% {
     transform: translateY(0px);

@@ -37,13 +37,13 @@ const StoreSection = () => {
   <p className='text-[8vh] sm:text-[10vh] md:text-[12vh] lg:text-[15vh] uppercase text-brown font-[nukku2] -rotate-3 text-center'>At</p>
   <h1 className='text-[8vh] sm:text-[10vh] md:text-[12vh] lg:text-[15vh] uppercase text-brown font-[nukku2] text-center'>these Stores</h1>
 
-  <div className="store-img grid grid-cols-2 md:grid-cols-3 gap-6 p-10">
-    <img src="/images/walmart.svg" alt="Walmart" className="" />
-    <img src="/images/kroger.svg" alt="Kroger" className="" />
-    <img src="/images/eleven.avif" alt="7 Eleven" className="" />
-    <img src="/images/albertsons.svg" alt="Albertsons" className="" />
-    <img src="/images/samclub.avif" alt="Sam's Club" className="" />
-    <img src="/images/target.avif" alt="Target" className="" />
+  <div className="store-img grid grid-cols-2 md:grid-cols-3 gap-6 p-10 pb-25">
+    <img src="/images/walmart.svg" alt="Walmart"  />
+    <img src="/images/kroger.svg" alt="Kroger"  />
+    <img src="/images/eleven.avif" alt="7 Eleven"  />
+    <img src="/images/albertsons.svg" alt="Albertsons"  />
+    <img src="/images/samclub.avif" alt="Sam's Club"  />
+    <img src="/images/target.avif" alt="Target" />
   </div>
   </div>
 </>

@@ -64,7 +64,6 @@ const EthicalSourcing = () => {
         start: "top 60%", // Slightly later for better animation
         end: "bottom 25%", // Slightly later
         scrub: 0.5, // Reduced scrub time for smoother animation
-        markers:true
       },
     });
 
@@ -218,21 +217,6 @@ const EthicalSourcing = () => {
           </div>
         </div>
 
-        {/* Call to Action with new background */}
-        <div className="bg-[#523122] py-20 px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-[Kanit-Medium] text-white mb-8">
-              Join Us in Making a Difference
-            </h2>
-            <button className="bg-white text-black px-8 py-4 rounded-full text-lg font-[Kanit-Medium] hover:bg-white/90 transition-colors">
-              Learn More
-            </button>
-          </motion.div>
-        </div>
       </div>
     </div>
   );
