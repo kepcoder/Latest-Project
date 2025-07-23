@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BackgroundParticles from "../bgParticles/backgroundParticles";
 import styles from "./EthicalSourcing.module.css";
+import FooterSection from "../sections/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -119,6 +120,7 @@ const EthicalSourcing = () => {
   }, []);
 
   return (
+    <>
     <div className="relative min-h-screen">
       <BackgroundParticles />
       <div className="relative z-10">
@@ -219,6 +221,8 @@ const EthicalSourcing = () => {
 
       </div>
     </div>
+    <FooterSection/>
+    </>
   );
 };
 

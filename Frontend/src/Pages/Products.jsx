@@ -25,7 +25,7 @@ const Products = () => {
     <div className="min-h-screen relative">
       <BackgroundParticles />
       <div className="relative z-10 p-6 md:p-12">
-        <h1 className="text-4xl md:text-5xl pt-20 font-extrabold text-center text-white mb-12">
+        <h1 className="uppercase text-4xl md:text-5xl pt-20 font-extrabold text-center text-white mb-12">
           MrBeast Feastables Chocolates
         </h1>
 

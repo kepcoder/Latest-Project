@@ -55,7 +55,7 @@ const FooterSection = () => {
             </div>
             <div>
               <p>Company</p>
-              <p>Contact Us</p>
+              <p className="cursor-pointer">Contact Us</p>
               <Link to='/worldwide' ><p>Available WorldWide</p></Link>
             </div>
           </div>

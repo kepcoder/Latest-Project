@@ -10,79 +10,13 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    { name: "Shop", path: "/products" },
-    { name: "Ethical Sourcing", path: "/ethicalsourcing", reload: true },
-    { name: "Available Worldwide", path: "/worldwide" },
-    { name: "Influencer", path: "/influencer" },
-  ];
-
-  const mobileItems = [
-    { name: "Bundles", path: "/products" },
-    { name: "Limited Time", path: "/products" },
-  ];
-
-  const waveVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        type: "spring",
-        stiffness: 120,
-      },
-    }),
-  };
-
   const navBarFade = {
     hidden: { opacity: 0, y: -20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
-  };
-
-  const renderLink = (item, idx, onClickClose) => {
-    const classes = "relative group";
-
-    return (
-      <motion.div
-        key={idx}
-        custom={idx}
-        variants={waveVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {item.reload ? (
-          <a
-            href={item.path}
-            onClick={(e) => {
-              e.preventDefault();
-              if (onClickClose) onClickClose();
-              window.location.href = item.path;
-            }}
-            className={classes}
-          >
-            {item.name}
-            <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-black group-hover:w-full transition-all duration-500" />
-          </a>
-        ) : (
-          <Link
-            to={item.path}
-            onClick={onClickClose}
-            className={classes}
-          >
-            {item.name}
-            <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-black group-hover:w-full transition-all duration-500" />
-          </Link>
-        )}
-      </motion.div>
-    );
   };
 
   return (
@@ -108,9 +42,42 @@ const Navbar = () => {
           <img src="/images/logo.avif" alt="logo" className="mx-auto" />
         </Link>
 
-        <div className="hidden xl:flex gap-8 font-[Kanit-BlackItalic] text-xl text-black tracking-wide">
-          {navItems.map((item, idx) => renderLink(item, idx))}
+        {/* Desktop Menu - NO BACKGROUND ADDED HERE */}
+<div className="hidden xl:flex items-center gap-8 font-[Kanit-BlackItalic] text-xl text-black tracking-wide">
+      {[
+        { label: "Shop", link: "/products" },
+        { label: "Ethical Sourcing", link: "/ethicalsourcing", forceReload: true },
+        { label: "Available Worldwide", link: "/worldwide" },
+        { label: "Influencer", link: "/influencer" },
+      ].map((item, i) => (
+        <div key={i} className="relative group">
+          {item.forceReload ? (
+            <a
+              href={item.link}
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = item.link; // reloads the page
+              }}
+              className="text-black font-semibold text-lg"
+            >
+              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                {item.label}
+              </span>
+              <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-black rounded-full blur-sm opacity-0 transition-all duration-500 group-hover:w-full group-hover:opacity-100"></span>
+            </a>
+          ) : (
+            <Link to={item.link} className="text-black font-semibold text-lg">
+              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                {item.label}
+              </span>
+              <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-black rounded-full blur-sm opacity-0 transition-all duration-500 group-hover:w-full group-hover:opacity-100"></span>
+            </Link>
+          )}
         </div>
+      ))}
+    </div>
+
+
 
         <div className="hidden xl:flex gap-4 text-3xl items-center">
           <HiOutlineQuestionMarkCircle className="cursor-not-allowed" />
@@ -121,10 +88,14 @@ const Navbar = () => {
               className="w-full h-full object-cover cursor-not-allowed"
             />
           </div>
-          <Link to="/login">
-            <CiFaceSmile className="cursor-pointer" />
-          </Link>
-          <a href="https://feastables.com/pages/find-a-store"><IoLocationOutline className="cursor-pointer" /></a>
+           <Link to="/login">
+    <div className="bg-sky-400 text-xl px-8 py-2 rounded-full font-semibold text-white hover:bg-sky-500 transition-all cursor-pointer">
+      Login
+    </div>
+  </Link>
+          <a href="https://feastables.com/pages/find-a-store">
+            <IoLocationOutline className="cursor-pointer" />
+          </a>
           <BsHandbag className="cursor-not-allowed" />
         </div>
 
@@ -136,6 +107,7 @@ const Navbar = () => {
         </div>
       </motion.div>
 
+      {/* ✅ Mobile Menu with BACKGROUND & BLUR */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -149,27 +121,48 @@ const Navbar = () => {
               <button onClick={() => setIsOpen(false)}>✕</button>
             </div>
 
-            <motion.div
-              className="flex flex-col gap-6 mt-4"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                visible: {
-                  transition: {
-                    staggerChildren: 0.15,
-                  },
-                },
-              }}
-            >
-              {[...mobileItems, ...navItems].map((item, idx) =>
-                renderLink(item, idx, () => setIsOpen(false))
-              )}
-            </motion.div>
+            <div className="flex flex-col gap-4 mt-4 font-[Kanit-BlackItalic] text-lg text-black tracking-wide">
+              {[
+                { label: "Shop", link: "/products" },
+                { label: "Ethical Sourcing", link: "/ethicalsourcing", forceReload: true },
+                { label: "Available Worldwide", link: "/worldwide" },
+                { label: "Influencer", link: "/influencer" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="backdrop-blur-md bg-white/20 px-4 py-3 rounded-xl flex justify-between items-center hover:bg-white/30 transition-all duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.forceReload ? (
+                    <a
+                      href={item.link}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = item.link;
+                      }}
+                      className="flex justify-between items-center w-full"
+                    >
+                      <span>{item.label}</span>
+                      <span className="text-xl inline-block animate-[wiggle_1.5s_ease-in-out_infinite] rotate-[-45deg]">➜</span>
+                    </a>
+                  ) : (
+                    <Link to={item.link} className="flex justify-between items-center w-full">
+                      <span>{item.label}</span>
+                      <span className="text-xl inline-block animate-[wiggle_1.5s_ease-in-out_infinite] rotate-[-45deg]">➜</span>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
 
             <div className="mt-auto pt-10 border-t-2 border-black flex flex-col gap-4 text-3xl">
               <div className="flex gap-4 justify-center">
-                <HiOutlineQuestionMarkCircle/>
-                <CiFaceSmile />
+                <HiOutlineQuestionMarkCircle />
+                 <Link to="/login">
+    <div className="bg-sky-400 px-10 py-3 text-2xl rounded-full font-semibold text-white hover:bg-sky-500 transition-all cursor-pointer">
+      Login
+    </div>
+  </Link>
               </div>
               <div className="w-10 h-10 rounded-full border-2 border-black mx-auto overflow-hidden">
                 <img

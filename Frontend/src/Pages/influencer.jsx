@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ParticlesBackground from "../bgParticles/backgroundParticles";
 import { FaYoutube, FaInstagram, FaGlobe } from "react-icons/fa";
+import FooterSection from "../sections/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,6 +60,7 @@ const Influencer = () => {
   }, []);
 
   return (
+    <>
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#fceabb] overflow-x-hidden" style={{ fontFamily: 'nukku3' }}>
       <ParticlesBackground />
       <div className="w-full flex flex-col items-center pt-32 pb-16 px-4 z-10">
@@ -109,6 +111,8 @@ const Influencer = () => {
         </div>
       </div>
     </div>
+    <FooterSection/>
+    </>
   );
 };
 

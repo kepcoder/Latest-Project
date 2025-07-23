@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "./Worldwide.module.css";
 import BackgroundParticles from "../bgParticles/backgroundParticles";
+import FooterSection from './../sections/Footer';
 
 const Worldwide = () => {
   const regions = [
@@ -44,6 +45,7 @@ const Worldwide = () => {
   ];
 
   return (
+    <>
     <div className="min-h-screen relative">
       <BackgroundParticles />
       <div className="relative z-10">
@@ -134,6 +136,8 @@ const Worldwide = () => {
         </div>
       </div>
     </div>
+    <FooterSection/>
+    </>
   );
 };
 
