@@ -12,6 +12,20 @@ gsap.registerPlugin(ScrollTrigger);
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [progressDone, setProgressDone] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+useEffect(() => {
+    const moveCursor = (e) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', moveCursor);
+
+    return () => {
+      window.removeEventListener('mousemove', moveCursor);
+    };
+  }, []);
+
 
   useEffect(() => {
     if (progressDone) {
@@ -37,6 +51,17 @@ const App = () => {
 }
 
   return (
+<>  
+  {/* Custom Circle Cursor */}
+      <div
+        className="custom-cursor"
+        style={{
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+        }}
+      ></div>
+
+
     <div>
       <div className="w-full fixed top-0 left-0 z-100">
         <Navbar />
@@ -55,6 +80,7 @@ const App = () => {
       theme="colored"
     />
     </div>
+</>    
   );
 };
 
