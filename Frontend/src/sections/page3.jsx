@@ -3,6 +3,8 @@ import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { Link } from 'react-router-dom';
 import { toggleCursor } from '../CustomCursor';
+import { SplitText } from "gsap/all";
+gsap.registerPlugin(SplitText);
 
 function Page3() {
 
@@ -11,6 +13,9 @@ function Page3() {
   const circleRef = useRef(null);
   const [hovered, setHovered] = useState(false);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const headingRef = useRef(null);
+  const headingCharsRef = useRef([]);
+
 
   const handleMouseEnter = () => {
     setHovered(true);
@@ -34,8 +39,34 @@ function Page3() {
   };
 
 
+  const handleHeadingEnter = () => {
+  gsap.to(headingCharsRef.current, {
+    y: (i) => Math.sin(i * 0.5) * 20,
+    duration: 0.8,
+    ease: "sine.inOut",
+    stagger: 0.02,
+  });
+};
+
+const handleHeadingLeave = () => {
+  gsap.to(headingCharsRef.current, {
+    y: 0,
+    duration: 0.5,
+    ease: "power2.out",
+    stagger: 0.02,
+  });
+};
+
+
+
  useGSAP(
     () => {
+
+      if (headingRef.current) {
+        const split = SplitText.create(headingRef.current, { type: "chars" });
+        headingCharsRef.current = split.chars;
+      }
+
       if (hovered && circleRef.current) {
         gsap.fromTo(
           circleRef.current,
@@ -51,7 +82,11 @@ function Page3() {
     <div className='w-full lg:h-[90vh] flex-col lg:flex-row flex p-6 gap-4'>
        <div className="relative w-full lg:w-[50%]  h-full rounded-2xl bg-milk p-10 flex flex-col items-start justify-between">
           <div className="uppertext z-2">
-              <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-[Kanit-Bold]'>IN THE COCOA INDUSTRY</h1>
+              <h1 
+               ref={headingRef}
+               onMouseEnter={handleHeadingEnter}
+               onMouseLeave={handleHeadingLeave} 
+               className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-[Kanit-Bold]'>IN THE COCOA INDUSTRY</h1>
              <h3 className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-[Kanit-Medium]'>Learn what we are doing to move kids out of cocoa fields and into classrooms.</h3>
           </div>
           <Link to="/ethicalsourcing" ><div className='Learn-More bg-[#FF2F9F] z-2 text-milk border-3 border-milk font-[nukku3] p-3 uppercase cursor-pointer rounded-lg hover:border-b-8 hover:border-white transition-all'>Learn More About Our Mission</div></Link>

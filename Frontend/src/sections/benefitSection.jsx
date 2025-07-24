@@ -60,7 +60,7 @@ const BenefitSection = () => {
               borderColor={"#222123"}
             />
             <ClipPathTitle
-              title={"No added sugar"}
+              title={"Reduced Sugar"}
               color={"#222123"}
               bg={"#faeade"}
               className={"second-title"}
