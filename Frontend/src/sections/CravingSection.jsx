@@ -147,7 +147,7 @@ useGSAP(() => {
 
       {/* for Mobile Version */}
       {isMobile && (
-        <div className="craving-mobile-section">
+        <div className="craving-mobile-section bg-milk">
           <h1 className="first-title text-black bg-milk p-4 rotate-3"
                style={{
                clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",

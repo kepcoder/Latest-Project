@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import AppRoute from "./Routes/routes";
 import Navbar from './components/navbar';
 import LoadingPage from "./components/loading";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -40,6 +42,18 @@ const App = () => {
         <Navbar />
       </div>
         <AppRoute />
+      <ToastContainer
+      position="top-right"
+      autoClose={3000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="colored"
+    />
     </div>
   );
 };

@@ -28,7 +28,7 @@ const Navbar = () => {
         className="h-[75px] w-full flex justify-between items-center bg-[#72E2FF] px-6 border-b-4 border-black xl:justify-between xl:px-6"
       >
         <div className="xl:hidden text-3xl text-black">
-          <BsHandbag />
+          <Link to="/carts"><BsHandbag /></Link>
         </div>
 
         <Link
@@ -96,7 +96,7 @@ const Navbar = () => {
           <a href="https://feastables.com/pages/find-a-store">
             <IoLocationOutline className="cursor-pointer" />
           </a>
-          <BsHandbag className="cursor-not-allowed" />
+          <Link to='/carts'><BsHandbag className="cursor-pointer" /></Link>
         </div>
 
         <div
@@ -107,7 +107,7 @@ const Navbar = () => {
         </div>
       </motion.div>
 
-      {/* ✅ Mobile Menu with BACKGROUND & BLUR */}
+      {/* Mobile Menu with BACKGROUND & BLUR */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -159,9 +159,9 @@ const Navbar = () => {
               <div className="flex gap-4 justify-center">
                 <HiOutlineQuestionMarkCircle />
                  <Link to="/login">
-    <div className="bg-sky-400 px-10 py-3 text-2xl rounded-full font-semibold text-white hover:bg-sky-500 transition-all cursor-pointer">
+      <Link to='/login' ><div className="bg-sky-400 px-10 py-3 text-2xl rounded-full font-semibold text-white hover:bg-sky-500 transition-all cursor-pointer">
       Login
-    </div>
+    </div></Link>
   </Link>
               </div>
               <div className="w-10 h-10 rounded-full border-2 border-black mx-auto overflow-hidden">

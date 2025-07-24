@@ -6,6 +6,7 @@ import EthicalSourcing from './../Pages/ethicalSourcing';
 import Login from './../Pages/Login';
 import Register from '../Pages/Register';
 import Influencer from "../Pages/influencer";
+import CartPage from './../Pages/cart';
 
 const AppRoute = () => {
    return (
@@ -17,6 +18,7 @@ const AppRoute = () => {
       <Route path="/login" element={<Login/>} />
       <Route path="/register" element={<Register/>} />
       <Route path="/influencer" element={<Influencer/>} />
+      <Route path="/carts" element={<CartPage/>} />
       {/* Add more routes here */}
     </Routes>
   );
