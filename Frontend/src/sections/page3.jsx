@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react';
 import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { Link } from 'react-router-dom';
-
+import { toggleCursor } from '../CustomCursor';
 
 function Page3() {
 
@@ -15,12 +15,14 @@ function Page3() {
   const handleMouseEnter = () => {
     setHovered(true);
     videoRef.current.play();
+    toggleCursor(true);
   };
 
   const handleMouseLeave = () => {      
     setHovered(false);
     videoRef.current.pause();
-    videoRef.current.currentTime = 0; // Optional: reset video to start
+    videoRef.current.currentTime = 0;
+    toggleCursor(false); 
   };
 
   const handleMouseMove = (e) => {

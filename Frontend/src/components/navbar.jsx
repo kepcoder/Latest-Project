@@ -6,6 +6,7 @@ import { BsHandbag } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { toggleCursor } from "../CustomCursor";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,12 +22,14 @@ const Navbar = () => {
 
   return (
     <>
-      <motion.div
-        variants={navBarFade}
-        initial="hidden"
-        animate="visible"
-        className="h-[75px] w-full flex justify-between items-center bg-[#72E2FF] px-6 border-b-4 border-black xl:justify-between xl:px-6"
-      >
+<motion.div
+  onMouseEnter={() => toggleCursor(true)} // Hide cursor
+  onMouseLeave={() => toggleCursor(false)} // Show cursor
+  variants={navBarFade}
+  initial="hidden"
+  animate="visible"
+  className="h-[75px] w-full flex justify-between items-center bg-[#72E2FF] px-6 border-b-4 border-black xl:justify-between xl:px-6"
+>
         <div className="xl:hidden text-3xl text-black">
           <Link to="/carts"><BsHandbag /></Link>
         </div>

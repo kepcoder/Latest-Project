@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CustomCursor from './CustomCursor';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,15 +54,7 @@ useEffect(() => {
   return (
 <>  
   {/* Custom Circle Cursor */}
-      <div
-        className="custom-cursor"
-        style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-        }}
-      ></div>
-
-
+     <CustomCursor />
     <div>
       <div className="w-full fixed top-0 left-0 z-100">
         <Navbar />
