@@ -63,7 +63,7 @@ const LandingPage = () => {
   return (
     <section className="bg-transparent">
       <div className="landing-container ">
-        <video src="/videos/landing-video.mp4"
+        <video src="/videos/landing-page-video.mp4"
                className="video-animate absolute bottom-0 left-0 w-full h-full object-cover object-bottom z-0" autoPlay muted
         ></video>
         {/* <img

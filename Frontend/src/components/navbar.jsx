@@ -58,7 +58,7 @@ const Navbar = () => {
                 e.preventDefault();
                 window.location.href = item.link; // reloads the page
               }}
-              className="text-black font-semibold text-lg"
+              className="text-black text-lg"
             >
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
                 {item.label}
@@ -66,7 +66,7 @@ const Navbar = () => {
               <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-black rounded-full blur-sm opacity-0 transition-all duration-500 group-hover:w-full group-hover:opacity-100"></span>
             </a>
           ) : (
-            <Link to={item.link} className="text-black font-semibold text-lg">
+            <Link to={item.link} className="text-black text-lg">
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
                 {item.label}
               </span>
