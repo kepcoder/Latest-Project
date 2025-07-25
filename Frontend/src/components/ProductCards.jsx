@@ -9,9 +9,9 @@ export default function ProductCards({ id, image, title, price }) {
       <img
         src={image}
         alt={title}
-        className="h-48 md:h-56 lg:h-64 w-auto object-contain mb-4"
+        className="h-48 md:h-56 lg:h-64 w-full object-cover mb-4 rounded-2xl max-[600px]:object-top"
       />
-      <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-center text-black">{title}</h3>
+      <h3 className="text-lg capitalize md:text-xl lg:text-2xl font-semibold text-center text-black">{title}</h3>
       <p className="text-md md:text-lg lg:text-xl text-[#0079AC] font-bold mt-2">{price}</p>
       <p
         onClick={() => {

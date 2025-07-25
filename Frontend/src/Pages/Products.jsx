@@ -45,7 +45,7 @@ const Products = () => {
           MrBeast Feastables Chocolates
         </h1>
 
-        {/* 🔍 Search Bar */}
+
         <div className="mb-10 flex justify-center">
           <input
             type="text"
@@ -56,7 +56,7 @@ const Products = () => {
           />
         </div>
 
-        {/* 🔍 Search Results */}
+
         {searchQuery ? (
           <section className="my-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
