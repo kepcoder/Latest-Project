@@ -37,7 +37,7 @@ const Cart = () => {
         <div className="w-full md:w-2/3">
           <h2 className="text-2xl font-bold mb-6">Your Cart</h2>
           {itemsWithDetails.length === 0 ? (
-            <p className="text-milk">"Abhi tak kuch bhi meetha nahi add kiya? Shocking!"</p>
+            <p className="text-milk">"Shocking🥵,Your Cart is empty"</p>
           ) : (
             itemsWithDetails.map((item) => (
               <div
@@ -64,10 +64,10 @@ const Cart = () => {
         {/* Summary | checkout box*/}
 <div className="w-full md:w-1/3 mt-13">
   <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 shadow-lg">
-    <h3 className="text-xl font-bold mb-4">Order Summary</h3>
+    <h3 className="text-xl font-bold  mb-4">Order Summary</h3>
     
     {itemsWithDetails.length === 0 ? (
-      <p className="text-milk">Khaali hai... ek bite toh banta hai 🍫</p>
+      <p className="text-milk">Add Some Chocolates to take a bite🍫</p>
     ) : (
       <>
         {itemsWithDetails.map((item, index) => (

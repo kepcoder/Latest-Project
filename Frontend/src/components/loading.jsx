@@ -1,14 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 
 const LoadingPage = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
+  const containerRef = useRef(null); // 👈 ref for animation
 
- useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          if (onComplete) onComplete(); // ✅ Call when done
+
+          // ✅ Animate slide up when done
+          gsap.to(containerRef.current, {
+            y: "-100%",
+            duration: 1,
+            ease: "power2.inOut",
+            onComplete: () => {
+              if (onComplete) onComplete(); // 🔥 Call parent to hide
+            },
+          });
+
           return 100;
         }
         return prev + 1;
@@ -19,8 +31,11 @@ const LoadingPage = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center bg-black text-white flex-col gap-4">
-      <img src='/images/logo.avif' alt="MrBeast Logo" className="loading-logo w-70 h-30" />
+    <div
+      ref={containerRef}
+      className="h-screen w-screen flex justify-center items-center bg-black text-white flex-col gap-4 fixed top-0 left-0 z-[9999]"
+    >
+      <img src="/images/logo.avif" alt="MrBeast Logo" className="loading-logo w-70 h-30" />
       <h1 className="text-2xl">Customizing Your Experience...</h1>
 
       <div className="w-[80%] h-2 bg-white/30 rounded-full">
