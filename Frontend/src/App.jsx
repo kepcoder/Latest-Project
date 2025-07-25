@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CustomCursor from './CustomCursor';
+import TawkToChat from "./tawk";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,7 +54,7 @@ useEffect(() => {
 
   return (
 <>  
-  {/* Custom Circle Cursor */}
+     <TawkToChat/>
      <CustomCursor />
     <div>
       <div className="w-full fixed top-0 left-0 z-100">
