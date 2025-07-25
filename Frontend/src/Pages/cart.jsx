@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { products } from "../data/flavourData";
 import ParticlesBackground from './../bgParticles/backgroundParticles';
@@ -83,9 +83,9 @@ const Cart = () => {
           <span>Total:</span>
           <span>${totalAmount.toFixed(2)}</span>
         </div>
-        <button className="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-2 rounded transition cursor-pointer">
+        <Link to="paymentpage" state={{ totalAmount }}><button className="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-2 rounded transition cursor-pointer">
           Proceed to Checkout
-        </button>
+        </button></Link>
       </>
     )}
   </div>

@@ -7,6 +7,8 @@ import Login from './../Pages/Login';
 import Register from '../Pages/Register';
 import Influencer from "../Pages/influencer";
 import CartPage from './../Pages/cart';
+import PaymentPage from './../Pages/paymentPage';
+import NotFound from './../Pages/NotFoundPage';
 
 const AppRoute = () => {
    return (
@@ -19,7 +21,8 @@ const AppRoute = () => {
       <Route path="/register" element={<Register/>} />
       <Route path="/influencer" element={<Influencer/>} />
       <Route path="/carts" element={<CartPage/>} />
-      {/* Add more routes here */}
+      <Route path="/carts/paymentpage" element={<PaymentPage/>} />
+      <Route path="*" element={<NotFound/>} />
     </Routes>
   );
 }
